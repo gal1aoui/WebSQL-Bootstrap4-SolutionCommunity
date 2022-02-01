@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/logo.png" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Cabin&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d2fde4ffab.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="SQLite.js"></script>
+    <title>Connecter | S'inscrire interface</title>
+    <script>
+        $(document).ready(function() {
+            $(".login-form").hide();
+            $(".login").css("background","white");
+
+            $(".login").click(function(){
+                $(".signup-form").hide();
+                $(".login-form").show();
+
+                $(".signup").css("background","white");
+                $(".login").css("background","#f0f0f0");
+            });
+
+            $(".signup").click(function(){
+                $(".signup-form").show();
+                $(".login-form").hide();
+
+                $(".signup").css("background","#f0f0f0");
+                $(".login").css("background","white");
+            });
+        });
+    </script>
+    <script>
+        function visibilit(elementId,area){
+    x = document.getElementById(area);
+    y = document.getElementById(elementId);
+    if(x.type == "password"){
+        x.type = "text";
+        y.className ="fas fa-eye-slash"
+    }else{
+        x.type = "password";
+        y.className="fas fa-eye";
+    }
+}
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div id="msg">
+                <!--Espace pour les messages Alert-->
+        </div>
+        <div class="signup">S'inscrire</div>
+        <div class="login">Connecter</div>
+        <hr>
+        
+            <div class="signup-form">
+                <form action="#">
+                <i class="far fa-envelope" style="position: absolute; margin-top: 15px;"></i>
+
+                <input type="email" id="em"  placeholder="E-mail" autocomplete="off" required><span id="an"></span> <br>
+                <i class="fas fa-users" style="position: absolute; margin-top: 15px;"></i>
+
+                <input type="text"  placeholder="Nom" id="nm" required><span id="an"></span> <br>
+                <i class="fas fa-user" style="position: absolute; margin-top: 15px;"></i>
+
+                <input type="text"  placeholder="Prénom" id="pn" required><span id="an"></span> <br>
+                <i class="fas fa-user-lock" style="position: absolute; margin-top: 15px;"></i>
+            
+                <input id="pass" type="password"  placeholder="Mot de passe" required><i class="fas fa-eye" id="ico" onclick="visibilit('ico','pass')" style="position: absolute; margin-top: 15px; font-size: 20px; margin-left: -25px;"></i>
+                <span id="an"></span> <br>
+                <button class="btn" onclick="ins()" type="submit">Creér Votre Compte</button>
+                </form>
+            </div>
+        <div class="login-form">
+         <form action="#">
+            <i class="far fa-envelope" style="position: absolute; margin-top: 15px;"></i>
+            <input type="email" id="emlog" required placeholder="E-mail"><span id="an"></span> <br>
+            <i class="fas fa-user-lock" style="position: absolute; margin-top: 15px;"></i>
+            <input id="pass1" type="password" required placeholder="Mot de passe" ><i class="fas fa-eye" id="ico1" onclick="visibilit('ico1','pass1')" style="position: absolute; margin-top: 15px; font-size: 20px; margin-left: -25px;"></i>
+                <div>
+                   <a href="logsig.html"> <i class="fas fa-arrow-circle-left" style="font-size: 82px;"></i></a>
+                    <p style="margin-left: 70px; margin-top: -60px; text-align: center;">Vous N'avez pas d'un Compte ? <br> Creér Maintenant</p>
+                </div>
+            <button class="btnl" type="submit" onclick="verif()">Connecter</button>
+         </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
